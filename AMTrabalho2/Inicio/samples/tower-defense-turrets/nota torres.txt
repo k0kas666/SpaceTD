@@ -1,0 +1,4 @@
+1-gelo
+2-sniper
+6-canhao
+7-chama

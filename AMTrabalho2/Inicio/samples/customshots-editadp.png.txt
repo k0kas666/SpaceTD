@@ -1,0 +1,1 @@
+balas_01.png.png 0 0, balas_02.png.png 779 0, balas_03.png.png 366 -139, balas_04.png.png 363 -139, balas_05.png.png 387 -139, balas_06.png.png 411 -139, balas_07.png.png 435 -139, balas_08.png.png 530 -139.

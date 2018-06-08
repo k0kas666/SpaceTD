@@ -1,0 +1,33 @@
+div{
+    margin: 0;
+}
+.container{
+    margin: auto; !important;
+    padding: 0; !important;
+}
+canvas{
+    margin: auto; !important;
+    padding: 0; !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./samples/background-tilesets/background2.jpg');
+    background-repeat: repeat;
+}
+
+#canvasBack {
+    position: absolute;
+    z-index: 10;
+}
+
+#canvasComp {
+position: absolute;
+    z-index: 20;
+}
+
+#canvasEnt {
+    position: absolute;
+    z-index: 30;
+}
