@@ -182,7 +182,7 @@
         for (torre of asTorres) {
             for (mob of osMobs) {
                 if (Math.abs(torre.x - mob.x) < (torre.range * 46) && Math.abs(torre.y - mob.y) < (torre.range * 46)) {
-                    torre.attack(mob.x,mob.y);
+                    torre.attack(mob);
                 }else{
                     torre.rotation=0;
                 }

@@ -55,7 +55,6 @@ var Torre = Entity.extend(function () {
             if (!this.active) return;
             if (this.nearbyMinion) {
                 this.podeDisparar = true;
-                //disparar()
             }
         };
         var setup = function () {
@@ -65,21 +64,21 @@ var Torre = Entity.extend(function () {
             this.height = this.frames[0].height;
         }.bind(this);
 
-        this.disparar = function (criarBala) {
+        this.disparar = function (mob,criarBala) {
             if (!podeDisparar) return;
 
             podeDisparar = false;
-
+            mob.health-=this.damage;
             callback = criarBala;
         };
         this.getSprite = function () {
             return this.frames[this.currentFrame];
         };
 
-        this.attack = function (mobX, mobY) {
+        this.attack = function (mob) {
 
-                var difX = this.x - mobX;
-                var difY = this.y - mobY;
+                var difX = this.x - mob.x;
+                var difY = this.y - mob.y;
 
                 var alpha = Math.atan(difY / difX);
 
@@ -88,9 +87,7 @@ var Torre = Entity.extend(function () {
                 }else{
                     this.rotation = alpha + Math.PI*(-2/4);
                 }
-
-
-                //disparar()
+                disparar(mob)
         }
     }
 );
