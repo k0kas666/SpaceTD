@@ -94,7 +94,7 @@ var Entity = Class.extend(function () {
 			 
 				// transla��o para o eixo da entidade
 				ctx.translate(this.x + (this.width >> 1), this.y + (this.height >> 1));
-				ctx.rotate(this.rotation / 180);
+				ctx.rotate(this.rotation);
 
 				ctx.drawImage(
 					this.spriteSheet.img,
