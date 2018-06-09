@@ -101,7 +101,9 @@
         // canvasses.components.canvas.height = 600;
 
         canvas = canvasses.entities.canvas
-        var mob = new Minion(gSpriteSheets['samples//creep//creep-1-blue//sprite.png'], canvas.width/ 2, canvas.height / 2, "normal", 2, "")
+
+        var mob = new Minion(gSpriteSheets['samples//creep//creep-1-blue//sprite.png'], 0, canvas.height / 2, "boss", 2, "")
+
         entities.push(mob);
         osMobs.push(mob);
         //entities.push(oBackground);   background
@@ -142,14 +144,14 @@
                 console.log("colisao");
                 return;
             }
-            if (Math.abs(point.x - umaTorre.x) < 40) {
+            if (Math.abs(point.x - umaTorre.x) < 46) {
                 if (point.x - umaTorre.x < 0) {
                     point.x -= Math.abs(point.x - umaTorre.x);
                 } else if (point.x - umaTorre.x > 0) {
                     point.x += Math.abs(point.x - umaTorre.x);
                 }
             }
-            if (Math.abs(point.y - umaTorre.y) < 40) {
+            if (Math.abs(point.y - umaTorre.y) < 46) {
                 if (point.y - umaTorre.y < 0) {
                     point.y -= Math.abs(point.y - umaTorre.y);
                 } else if (point.y - umaTorre.y > 0) {
@@ -158,7 +160,9 @@
             }
         }
         if (podeCriar) {
+
             var torre = new Torre(gSpriteSheets['samples//tower-defense-turrets//tower-defense-turretsjson.png'], point.x, point.y, towerType, 2, "")
+
             entities.push(torre);
             asTorres.push(torre);
         }
@@ -178,7 +182,9 @@
         for (torre of asTorres) {
             for (mob of osMobs) {
                 if (Math.abs(torre.x - mob.x) < (torre.range * 46) && Math.abs(torre.y - mob.y) < (torre.range * 46)) {
-                    torre.attack(mob.x, mob.y);
+                    torre.attack(mob.x,mob.y);
+                }else{
+                    torre.rotation=0;
                 }
             }
         }
@@ -208,9 +214,15 @@ function clearArrays() {
 }
 
 
-function render() {
-    //Clear the previous animation frame
 
+  
+    function render() {
+        //Clear the previous animation frame
+        for (mob of osMobs){
+            mob.update();
+        }
+
+      
 
     canvasses.entities.ds.clearRect(0, 0, canvas.width, canvas.height);
 
