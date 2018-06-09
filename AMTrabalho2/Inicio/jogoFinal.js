@@ -18,7 +18,7 @@
     var osMobs = []
     var barraVida;
     var waveTimer;
-    var towerType="";
+    var towerType = "sniperTower";
     var GameStates = {
         RUNNING: 1,
         PAUSED: 2,
@@ -101,7 +101,9 @@
         // canvasses.components.canvas.height = 600;
 
         canvas = canvasses.entities.canvas
+
         var mob = new Minion(gSpriteSheets['samples//creep//creep-1-blue//sprite.png'], 0, canvas.height / 2, "boss", 2, "")
+
         entities.push(mob);
         osMobs.push(mob);
         //entities.push(oBackground);   background
@@ -158,7 +160,9 @@
             }
         }
         if (podeCriar) {
-            var torre = new Torre(gSpriteSheets['samples//tower-defense-turrets//tower-defense-turretsjson.png'], point.x, point.y, "sniperTower", 2, "")
+
+            var torre = new Torre(gSpriteSheets['samples//tower-defense-turrets//tower-defense-turretsjson.png'], point.x, point.y, towerType, 2, "")
+
             entities.push(torre);
             asTorres.push(torre);
         }
@@ -174,7 +178,7 @@
         //Create the animation loop
 
         //COMPLETAR
-
+        if (asTorres.length != 0 && osMobs != 0) {
         for (torre of asTorres) {
             for (mob of osMobs) {
                 if (Math.abs(torre.x - mob.x) < (torre.range * 46) && Math.abs(torre.y - mob.y) < (torre.range * 46)) {
@@ -184,43 +188,50 @@
                 }
             }
         }
-        render(); // fazer o render das entidades
-
-        checkColisions();// Verificar se h� colis�es
-
-        clearArrays(); // limpar os arrays
-
-        animationHandler = window.requestAnimationFrame(update);
-
     }
 
-    function filtrarAtivos(obj) {
-        if (obj.active == true) return obj;
-    }
+    render(); // fazer o render das entidades
+
+    checkColisions();// Verificar se h� colis�es
+
+    clearArrays(); // limpar os arrays
+
+    animationHandler = window.requestAnimationFrame(update);
+
+}
+
+function filtrarAtivos(obj) {
+    if (obj.active == true) return obj;
+}
 
 //	efetua a limpeza dos arrays
-    function clearArrays() {
-        entities = entities.filter(filtrarAtivos);
-        /*   osMisseis=osMisseis.filter(filtrarAtivos);
-           asBalasSoldado=asBalasSoldado.filter(filtrarAtivos);
-           asBalas=asBalas.filter(filtrarAtivos);*/
+function clearArrays() {
+    entities = entities.filter(filtrarAtivos);
+    /*   osMisseis=osMisseis.filter(filtrarAtivos);
+       asBalasSoldado=asBalasSoldado.filter(filtrarAtivos);
+       asBalas=asBalas.filter(filtrarAtivos);*/
 
-    }
+}
 
 
+
+  
     function render() {
         //Clear the previous animation frame
         for (mob of osMobs){
             mob.update();
         }
 
-        canvasses.entities.ds.clearRect(0, 0, canvas.width, canvas.height);
+      
 
-        for (var i = 0; i < entities.length; i++) {
+    canvasses.entities.ds.clearRect(0, 0, canvas.width, canvas.height);
 
-            entities[i].render(canvasses.entities.ds)
+    for (var i = 0; i < entities.length; i++) {
 
-        }
+        entities[i].render(canvasses.entities.ds)
+
     }
+}
 
-})();// não apagar
+})
+();// não apagar

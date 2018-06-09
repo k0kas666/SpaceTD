@@ -77,6 +77,7 @@ var Torre = Entity.extend(function () {
         };
 
         this.attack = function (mobX, mobY) {
+
                 var difX = this.x - mobX;
                 var difY = this.y - mobY;
 
