@@ -55,7 +55,7 @@ var Torre = Entity.extend(function () {
             if (!this.active) return;
             if (this.nearbyMinion) {
                 this.podeDisparar = true;
-                disparar()
+                //disparar()
             }
         };
         var setup = function () {
@@ -77,19 +77,18 @@ var Torre = Entity.extend(function () {
         };
 
         this.attack = function (mobX, mobY) {
-              var difX = this.x - mobX;
+                var difX = this.x - mobX;
                 var difY = this.y - mobY;
 
                 var alpha = Math.atan(difY / difX);
-                this.rotation = alpha;
 
-                this.vx = speed * Math.cos(alpha);
-                this.vy = speed * Math.sin(alpha);
-
-                if (difX > 0) {
-                    this.vx *= -1;
-                    this.vy *= -1;
+                if(difX<0){
+                    this.rotation = alpha + Math.PI*(2/4);
+                }else{
+                    this.rotation = alpha + Math.PI*(-2/4);
                 }
+
+
                 //disparar()
         }
     }

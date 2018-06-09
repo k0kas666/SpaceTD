@@ -101,7 +101,6 @@
         // canvasses.components.canvas.height = 600;
 
         canvas = canvasses.entities.canvas
-        var mob = new Minion(gSpriteSheets['samples//creep//creep-1-blue//sprite.png'], 0, canvas.height / 2, "normal", 2, "")
         entities.push(mob);
         //entities.push(oBackground);   background
         oBackground.render(canvasses.background.ds);
