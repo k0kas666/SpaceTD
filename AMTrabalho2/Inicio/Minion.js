@@ -59,7 +59,13 @@ var Minion = Entity.extend(function () {
     this.update = function () {
         this.vFrame = this.vFrame < this.frames.length - 1 ?this. vFrame + 0.1 : 0;
         this.currentFrame = Math.floor(this.vFrame);
-        this.x+=this.speed/4;// o /4 para teste
+        console.log("Vida do Mob: " +this.health);
+        if(this.health<=0){
+            this.killed=true;
+            this.active=false;
+        }else {
+            this.x += this.speed / 4;// o /4 para teste
+        }
     };
     var setup = function () {
         this.eStates[this.states.WALK] = this.spriteSheet.getStats(this.states.WALK);

@@ -69,6 +69,7 @@ var Torre = Entity.extend(function () {
 
             podeDisparar = false;
             mob.health-=this.damage;
+            console.log("Vida depois do damage:" + mob.health)
             callback = criarBala;
         };
         this.getSprite = function () {
@@ -87,7 +88,7 @@ var Torre = Entity.extend(function () {
                 }else{
                     this.rotation = alpha + Math.PI*(-2/4);
                 }
-                disparar(mob)
+                this.disparar(mob)
         }
     }
 );

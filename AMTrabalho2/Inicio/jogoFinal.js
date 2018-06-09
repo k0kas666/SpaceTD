@@ -207,6 +207,8 @@ function filtrarAtivos(obj) {
 //	efetua a limpeza dos arrays
 function clearArrays() {
     entities = entities.filter(filtrarAtivos);
+    osMobs= osMobs.filter(filtrarAtivos);
+    asTorres= asTorres.filter(filtrarAtivos);
     /*   osMisseis=osMisseis.filter(filtrarAtivos);
        asBalasSoldado=asBalasSoldado.filter(filtrarAtivos);
        asBalas=asBalas.filter(filtrarAtivos);*/
