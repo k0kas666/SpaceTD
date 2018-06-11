@@ -76,7 +76,7 @@ var Torre = Entity.extend(function () {
             return this.frames[this.currentFrame];
         };
 
-        this.attack = function (mob) {
+        this.attack = function (mob,criarBala ) {
 
                 var difX = this.x - mob.x;
                 var difY = this.y - mob.y;
@@ -88,7 +88,7 @@ var Torre = Entity.extend(function () {
                 }else{
                     this.rotation = alpha + Math.PI*(-2/4);
                 }
-                this.disparar(mob)
+                this.disparar(mob, criarBala)
         }
     }
 );

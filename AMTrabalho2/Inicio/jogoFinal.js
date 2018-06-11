@@ -12,6 +12,7 @@
     var debugMode = true;
     var animationHandler;
     var asBarras;
+    var asBalas=[];
     var spawnPoints = [];
     var endPoints = [];
     var asTorres = [];
@@ -119,7 +120,6 @@
         point.x = e.pageX - canvas.offsetLeft;
         point.y = e.pageY - canvas.offsetTop;
         colocarTorre();
-
     }
 
     function keyDownHandler(e) {
@@ -182,7 +182,14 @@
         for (torre of asTorres) {
             for (mob of osMobs) {
                 if (Math.abs(torre.x - mob.x) < (torre.range * 46) && Math.abs(torre.y - mob.y) < (torre.range * 46)) {
-                    torre.attack(mob);
+                    torre.attack(mob, function () {
+                        var umaBala = new Bala(gSpriteSheets['assets//tank.png'], umSoldado.x, umSoldado.y + 5, 10, GameSounds.BALASOLDADO);
+                        umaBala.scaleFactor = 0.3;
+                        umaBala.vy = 4;
+                        umaBala.id=Date.now();
+                        asBalas.push(umaBala);
+                        entities.push(umaBala);
+                    }););
                 }else{
                     torre.rotation=0;
                 }
