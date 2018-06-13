@@ -57,7 +57,7 @@
 
         var spBack = new SpriteSheet();
         spBack.load("samples//tower-defense//background.png", "samples//tower-defense//background.json", loaded);
-
+        // var spBla
         var spCreepsBlue1 = new SpriteSheet();
         spCreepsBlue1.load("samples//creep//creep-1-blue//sprite.png", "samples//creep//creep-1-blue//sprite.json", loaded);
         var spCreepsRed1 = new SpriteSheet();
@@ -189,7 +189,7 @@
                         umaBala.id=Date.now();
                         asBalas.push(umaBala);
                         entities.push(umaBala);
-                    }););
+                    });
                 }else{
                     torre.rotation=0;
                 }

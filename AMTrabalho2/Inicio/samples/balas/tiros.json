@@ -1,0 +1,57 @@
+{"frames": {
+
+"bala.png":
+{
+	"frame": {"x":45,"y":85,"w":7,"h":17},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":1,"w":7,"h":17},
+	"sourceSize": {"w":9,"h":19},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"canhao.png":
+{
+	"frame": {"x":33,"y":85,"w":10,"h":10},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":10,"h":10},
+	"sourceSize": {"w":10,"h":10},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"chama.png":
+{
+	"frame": {"x":20,"y":85,"w":11,"h":15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":11,"h":15},
+	"sourceSize": {"w":11,"h":15},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"gelo.png":
+{
+	"frame": {"x":1,"y":85,"w":16,"h":17},
+	"rotated": true,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":17},
+	"sourceSize": {"w":16,"h":17},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"gelo2.png":
+{
+	"frame": {"x":1,"y":1,"w":82,"h":82},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":82,"h":82},
+	"sourceSize": {"w":82,"h":82},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "tiros.png",
+	"format": "RGBA8888",
+	"size": {"w":84,"h":102},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:78eef0e69629fd0bad783994360b42df:74992c0f748223ad498af45d70e37b18:e495582d068bcf23d81c4db3cfd8d304$"
+}
+}
